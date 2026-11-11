@@ -17,8 +17,7 @@ npm run dev
 
 ## Make it yours
 
-All business details are placeholders. Edit the `BUSINESS`, `SERVICES`,
-`WORK`, `STATS` and `PLANS` objects at the top of `src/App.tsx`.
+Edit the `BUSINESS`, `SERVICES`, `PROCESS`, `STATS` and `PLANS` objects at the top of `src/App.tsx`.
 
 To change the look, swap `@astryxdesign/theme-stone` for another theme
 (for example `theme-matcha` or `theme-butter`) in `package.json`,

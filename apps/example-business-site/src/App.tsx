@@ -14,27 +14,27 @@ import {Banner} from '@astryxdesign/core/Banner';
 import {Divider} from '@astryxdesign/core/Divider';
 
 /**
- * Nexora Digital — single-page business website
+ * ZaaS — single-page business website
  *
  * Astryx components render the UI (text, buttons, cards, form fields).
  * Tailwind utilities handle page layout and responsive breakpoints.
- * All business details below are placeholders: edit the BUSINESS object.
+ * Business details live in the BUSINESS object below.
  */
 
 const BUSINESS = {
-  name: 'Nexora Digital',
+  name: 'ZaaS',
   tagline: 'Websites & IT services for growing businesses',
-  city: 'Kochi, Kerala',
-  phoneDisplay: '+91 98765 43210',
-  phoneLink: '+919876543210',
-  whatsapp: '919876543210',
-  email: 'hello@nexoradigital.example',
+  city: 'Trichy, Tamil Nadu',
+  phoneDisplay: '+91 90801 17538',
+  phoneLink: '+919080117538',
+  whatsapp: '919080117538',
+  email: 'ashik14250@gmail.com',
   hours: 'Mon – Sat, 9:30 AM – 6:30 PM',
 };
 
 const NAV = [
   {href: '#services', label: 'Services'},
-  {href: '#work', label: 'Work'},
+  {href: '#process', label: 'Process'},
   {href: '#about', label: 'About'},
   {href: '#pricing', label: 'Pricing'},
   {href: '#contact', label: 'Contact'},
@@ -67,30 +67,30 @@ const SERVICES = [
   },
 ];
 
-const WORK = [
+const PROCESS = [
   {
-    client: 'Spice Route Café',
-    type: 'Restaurant',
-    result: 'Online menu and table booking — 40% more weekend reservations.',
+    step: 'Step 1',
+    title: 'Free consultation',
+    body: 'Tell us about your business on a call or WhatsApp. We suggest what you need and give a fixed quote.',
   },
   {
-    client: 'Periyar Textiles',
-    type: 'Retail store',
-    result: 'Online store with UPI checkout, now 120+ orders a month.',
+    step: 'Step 2',
+    title: 'Design & build',
+    body: 'We design your site, share a preview link, and make changes until you are happy.',
   },
   {
-    client: 'GreenLeaf Clinic',
-    type: 'Healthcare',
-    result: 'Appointment booking site and office network setup for 3 branches.',
+    step: 'Step 3',
+    title: 'Launch & support',
+    body: 'We put your site live, connect your domain and Google listing, and stay on call after launch.',
   },
-];
+]
 
 const STATS = [
-  {value: '120+', label: 'Projects delivered'},
-  {value: '8 yrs', label: 'In business'},
-  {value: '4.9★', label: 'Google rating'},
-  {value: '24 hr', label: 'Support response'},
-];
+  {value: 'Free', label: 'First consultation'},
+  {value: '7 days', label: 'Typical website launch'},
+  {value: 'Fixed', label: 'Price agreed upfront'},
+  {value: '24 hr', label: 'Reply to enquiries'},
+]
 
 const PLANS = [
   {
@@ -140,7 +140,7 @@ function Header() {
           <span
             aria-hidden
             className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-on-accent">
-            N
+            Z
           </span>
           <Text type="label" size="lg" weight="bold">
             {BUSINESS.name}
@@ -186,7 +186,7 @@ function Hero() {
           </Text>
           <HStack gap={3} wrap="wrap">
             <Button label="Get a free quote" variant="primary" size="lg" href="#contact" />
-            <Button label="See our work" variant="secondary" size="lg" href="#work" />
+            <Button label="How we work" variant="secondary" size="lg" href="#process" />
           </HStack>
         </VStack>
         <Card padding={6} elevation="med">
@@ -198,7 +198,7 @@ function Hero() {
               'Website live in as little as 7 days',
               'Fixed prices — no hidden charges',
               'Local team you can call or meet',
-              'Support in English and Malayalam',
+              'Support in English and Tamil',
             ].map(point => (
               <HStack key={point} gap={3} vAlign="center">
                 <span
@@ -298,22 +298,22 @@ function Services() {
   );
 }
 
-function Work() {
+function Process() {
   return (
-    <section id="work" className="bg-muted">
+    <section id="process" className="bg-muted">
       <div className="mx-auto max-w-6xl px-5 py-20">
         <VStack gap={8}>
-          <SectionHeading eyebrow="Our work" title="Results for local businesses" />
+          <SectionHeading eyebrow="How we work" title="From first call to live website" />
           <div className="grid gap-5 md:grid-cols-3">
-            {WORK.map(project => (
-              <Card key={project.client} padding={5}>
+            {PROCESS.map(item => (
+              <Card key={item.title} padding={5}>
                 <VStack gap={3}>
                   <div>
-                    <Badge variant="neutral" label={project.type} />
+                    <Badge variant="neutral" label={item.step} />
                   </div>
-                  <Heading level={3}>{project.client}</Heading>
+                  <Heading level={3}>{item.title}</Heading>
                   <Text type="body" color="secondary">
-                    {project.result}
+                    {item.body}
                   </Text>
                 </VStack>
               </Card>
@@ -585,7 +585,7 @@ export default function App() {
           <Hero />
           <Stats />
           <Services />
-          <Work />
+          <Process />
           <About />
           <Pricing />
           <Contact />
